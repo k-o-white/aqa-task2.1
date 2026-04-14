@@ -10,7 +10,7 @@ build: off  # будем использовать свой скрипт сбор
 
 install:
   - java -jar ./artifacts/app-mbank.jar &
+  - chmod +x gradlew
 
 build_script:
-  - chmod +x gradlew
   - ./gradlew test --info
