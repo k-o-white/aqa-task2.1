@@ -17,4 +17,4 @@ install:
   - chmod +x gradlew
 
 build_script:
-  - ./gradlew test --info
+  - ./gradlew test --info -Dhttps.protocols=TLSv1.2
