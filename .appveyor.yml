@@ -9,8 +9,12 @@ branches:
 build: off  # будем использовать свой скрипт сборки
 
 install:
+  - sudo apt-get update
+  - sudo apt-get install -y ca-certificates
+  - sudo update-ca-certificates
+  - java -version
   - java -jar ./artifacts/app-mbank.jar &
   - chmod +x gradlew
 
 build_script:
-  - ./gradlew test --info
+  - ./gradlew test --info -Dhttps.protocols=TLSv1.2
